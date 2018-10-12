@@ -186,13 +186,36 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 
 //Code Here
 
-// function removeItem(myGroceryList, changeToList) {
-//   let newGroceryList = [];
-//   for (let i = 0; i < myGroceryList.length; i++) {
-//     myGroceryList[i] !== changeToList ? newGroceryList.push(changeToList) : 
-//   }
-// }
+function removeItem(myGroceryList, changeToList) {
+  if(!myGroceryList || !changeToList) {
+    return [];
+  }
+  for (let i = 0; i < myGroceryList.length; i++) {
+    if (myGroceryList[i] === changeToList) {
+      myGroceryList.splice(i, 1)
+      return myGroceryList;
+    } else {
+      return myGroceryList;
+    }
+  } 
+}
 
+function addItem(myGroceryList, addToList) {
+  if(!myGroceryList || !addToList) {
+    return [];
+  }
+  for (let i = 0; i < myGroceryList.length; i++) {
+    if (myGroceryList[i] !== addToList) {
+      myGroceryList.push(addToList);
+      return myGroceryList;
+    } else {
+      return myGroceryList;
+    }
+    
+  }
+
+}
+addItem(myGroceryList, 'pizza');
 
 
 ////////// PROBLEM 9 //////////
@@ -257,11 +280,9 @@ for(var i = 0; i < num2; i++){
 */
 
 function longer(arr1, arr2) {
-  let array1 = arr1.length;
-  let array2 = arr2.length;
-  if (array1 > array2) {
+  if (arr1.length > arr2.length) {
     return arr1;
-  } else if (array2 > array1) {
+  } else if (arr2 > arr1) {
     return arr2;
   }
 }
